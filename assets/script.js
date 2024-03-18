@@ -30,6 +30,7 @@ let listedots=[]
 
 function addimage(){
 const image = document.querySelector(".banner-img")
+const text = document.querySelector("#banner p")
 let i =0
 image.src= ("./assets/images/slideshow/" + slides[i].image) 
 listedots[i].className="dot dot_selected" 
@@ -40,12 +41,15 @@ arrow_right.addEventListener("click", () => {
 	    image.src= ("./assets/images/slideshow/" + slides[i].image) 
         listedots[i].className="dot dot_selected"
 		listedots[slides.length-1].className="dot"
+		text.innerHTML= slides[i].tagLine
 	}
 	else{
 	   i++
 	   image.src= ("./assets/images/slideshow/" + slides[i].image) 
         listedots[i].className="dot dot_selected" 
-	    listedots[i-1].className="dot"}
+	    listedots[i-1].className="dot"
+		text.innerHTML= slides[i].tagLine
+	}
 });
 let arrow_left = document.querySelector(".arrow_left");
 arrow_left.addEventListener("click", () => {
@@ -54,12 +58,14 @@ arrow_left.addEventListener("click", () => {
 		image.src= ("./assets/images/slideshow/" + slides[i].image) 
         listedots[i].className="dot dot_selected" 
 	    listedots[0].className="dot"
+		text.innerHTML= slides[i].tagLine
 	}
 	else{
 	i--
     image.src= ("./assets/images/slideshow/" + slides[i].image) 
     listedots[i].className="dot dot_selected"
     listedots[i+1].className="dot"
+	text.innerHTML= slides[i].tagLine
     }
 });
 
