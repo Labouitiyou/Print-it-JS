@@ -23,10 +23,7 @@ function createDot(){
 	dots.appendChild(dot)
 	return dot
 	}
-let listedots=[]
-    for(let i=0; i< slides.length; i++){
-	listedots[i]=createDot()
-	}
+
 
 function addimage(){
 const image = document.querySelector(".banner-img")
@@ -35,40 +32,40 @@ let i =0
 image.src= ("./assets/images/slideshow/" + slides[i].image) 
 listedots[i].className="dot dot_selected" 
 let arrow_right = document.querySelector(".arrow_right");
-arrow_right.addEventListener("click", () => {
-	if (i === slides.length-1){
+    arrow_right.addEventListener("click", () => {
+	    if (i === slides.length-1){
 		i=0;
 	    image.src= ("./assets/images/slideshow/" + slides[i].image) 
         listedots[i].className="dot dot_selected"
 		listedots[slides.length-1].className="dot"
 		text.innerHTML= slides[i].tagLine
-	}
-	else{
+
+	   }
+	   else{
 	   i++
 	   image.src= ("./assets/images/slideshow/" + slides[i].image) 
         listedots[i].className="dot dot_selected" 
 	    listedots[i-1].className="dot"
 		text.innerHTML= slides[i].tagLine
-	}
-});
+       }
+    });
 let arrow_left = document.querySelector(".arrow_left");
-arrow_left.addEventListener("click", () => {
-	if(i===0){
+    arrow_left.addEventListener("click", () => {
+	    if(i===0){
 		i = slides.length-1
 		image.src= ("./assets/images/slideshow/" + slides[i].image) 
         listedots[i].className="dot dot_selected" 
 	    listedots[0].className="dot"
 		text.innerHTML= slides[i].tagLine
-	}
-	else{
-	i--
-    image.src= ("./assets/images/slideshow/" + slides[i].image) 
-    listedots[i].className="dot dot_selected"
-    listedots[i+1].className="dot"
-	text.innerHTML= slides[i].tagLine
-    }
-});
-
+	    }
+	    else{
+	    i--
+        image.src= ("./assets/images/slideshow/" + slides[i].image) 
+        listedots[i].className="dot dot_selected"
+        listedots[i+1].className="dot"
+	    text.innerHTML= slides[i].tagLine
+       }
+    });
 }
-addimage();
+
 
